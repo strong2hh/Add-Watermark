@@ -38,12 +38,8 @@ def add_watermark(img_path, text, font_size, color, position, out_path, xy=None)
         x, y = 10, 10
     elif position == 'right-top':
         x, y = width - text_w - 10, 10
-    elif position == 'left-center':
-        x, y = 10, (height - text_h)//2
     elif position == 'center':
         x, y = (width - text_w)//2, (height - text_h)//2
-    elif position == 'right-center':
-        x, y = width - text_w - 10, (height - text_h)//2
     elif position == 'left-bottom':
         x, y = 10, height - text_h - 10
     elif position == 'right-bottom':
@@ -59,7 +55,7 @@ def main():
     parser.add_argument('dir', help='图片文件夹路径')
     parser.add_argument('--font_size', type=int, default=32, help='字体大小')
     parser.add_argument('--color', type=str, default='255,0,0', help='字体颜色，格式如255,0,0')
-    parser.add_argument('--position', choices=['left-top','right-top','left-center','center','right-center','left-bottom','right-bottom'], default='right-bottom', help='水印位置')
+    parser.add_argument('--position', choices=['left-top','right-top','center','left-bottom','right-bottom'], default='right-bottom', help='水印位置')
     parser.add_argument('--xy', type=str, help='自定义水印坐标，如100,200')
     args = parser.parse_args()
 
